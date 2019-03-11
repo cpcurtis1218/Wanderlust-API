@@ -15,7 +15,7 @@ class DestinationsController < ProtectedController
 
   # POST /destinations
   def create
-    @destination = Destination.new(destination_params)
+    @destination = current_user.destinations.new(destination_params)
 
     if @destination.save
       render json: @destination, status: :created, location: @destination
@@ -41,7 +41,7 @@ class DestinationsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_destination
-      @destination = Destination.find(params[:id])
+      @destination = current_user.destinations.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
