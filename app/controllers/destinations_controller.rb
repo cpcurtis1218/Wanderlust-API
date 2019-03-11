@@ -1,4 +1,4 @@
-class DestinationsController < ApplicationController
+class DestinationsController < ProtectedController
   before_action :set_destination, only: [:show, :update, :destroy]
 
   # GET /destinations
