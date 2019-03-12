@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DestinationsController < ProtectedController
-  before_action :set_destination, only: [:show, :update, :destroy]
+  before_action :set_destination, only: %i[show update destroy]
 
   # GET /destinations
   def index
@@ -39,13 +41,14 @@ class DestinationsController < ProtectedController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_destination
-      @destination = current_user.destinations.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def destination_params
-      params.require(:destination).permit(:location, :note, :contact)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_destination
+    @destination = current_user.destinations.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def destination_params
+    params.require(:destination).permit(:location, :note, :contact)
+  end
 end
