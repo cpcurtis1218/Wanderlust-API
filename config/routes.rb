@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # RESTful routes for destinations table
   resources :destinations, except: %i[new edit]
 
+  # get route for users table
+  get '/users/:id' => 'users#show'
+
   # Custom routes
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'

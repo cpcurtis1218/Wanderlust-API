@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ProtectedController
-  skip_before_action :authenticate, only: %i[signup signin]
+  before_action :set_user, only: [:show]
+  skip_before_action :authenticate, only: %i[signup signin show]
+
+  # GET /users/1
+  def show
+    render json: @user
+  end
 
   # POST '/sign-up'
   def signup
@@ -47,6 +53,10 @@ class UsersController < ProtectedController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_creds
     params.require(:credentials)
