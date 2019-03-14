@@ -17,8 +17,8 @@ One issue is that Destinations are moved to the back of the list when they are u
 I would like to add a rating or preferences feature.  I would also like to add the ability to view other users' destinations.
 
 
-## Wireframes
-- [Mobile View](https://i.imgur.com/LYTNJ2t.png)
+## ERD
+![ERD](https://i.imgur.com/zQGA9Ea.png)
 
 
 ## User Stories
