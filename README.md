@@ -18,7 +18,7 @@ I would like to add a rating or preferences feature.  I would also like to add t
 
 
 ## ERD
-![ERD](https://i.imgur.com/zQGA9Ea.png)
+![ERD](https://i.imgur.com/4qUbG3T.png)
 
 
 ## User Stories
